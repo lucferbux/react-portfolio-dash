@@ -1,23 +1,217 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# Personal Portfolio Dashboard
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+A modern, secure personal portfolio application with JWT authentication, internationalization (i18n), and reusable React hooks built with React 19, TypeScript, and Tailwind CSS.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+## Features
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+- 🔐 **JWT Authentication** - Secure login with mock credentials and token management
+- 🌍 **Internationalization** - English/Spanish language support with react-i18next
+- 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
+- 🎨 **Modern UI** - Professional design using shadcn/ui components
+- 🔄 **State Management** - React Context for auth and project state
+- 📊 **Data Fetching** - Custom useFetchData hook with loading/error states
+- 🛣️ **Protected Routes** - Role-based access control for admin features
+- ⚡ **Performance** - Built with Vite for fast development and builds
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+## Tech Stack
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+- **Frontend**: React 19, TypeScript, Vite
+- **Routing**: React Router v6
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Icons**: Phosphor Icons
+- **Authentication**: JWT with localStorage persistence
+- **Internationalization**: i18next, react-i18next
+- **State Management**: React Context + useKV hook
 
-📄 License For Spark Template Resources 
+## Getting Started
 
-The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+\`\`\`bash
+git clone <repository-url>
+cd personal-portfolio
+\`\`\`
+
+2. Install dependencies:
+\`\`\`bash
+npm install
+\`\`\`
+
+3. Start the development server:
+\`\`\`bash
+npm run dev
+\`\`\`
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+## Demo Credentials
+
+The application includes mock authentication for demonstration:
+
+- **Admin User**: username: \`admin\`, password: \`admin\`
+- **Regular User**: username: \`user\`, password: \`user\`
+
+## Project Structure
+
+\`\`\`
+src/
+├── api/              # Mock API and data services
+├── components/       # React components
+│   ├── cards/        # Card components (ProjectCard, AboutMeCard)
+│   ├── elements/     # Reusable UI elements (LoadingSpinner, LanguageSelector)
+│   ├── layout/       # Layout components (Navigation, Layout)
+│   ├── routes/       # Route components (PrivateRoute)
+│   └── ui/           # shadcn/ui components
+├── context/          # React Context providers
+├── hooks/            # Custom React hooks
+├── model/            # TypeScript type definitions
+├── pages/            # Page components
+├── utils/            # Utility functions
+├── i18n.ts           # Internationalization configuration
+└── main.tsx          # Application entry point
+\`\`\`
+
+## Key Features
+
+### Authentication System
+
+- JWT-based authentication with automatic token validation
+- Protected routes with role-based access control
+- Automatic logout on token expiry
+- Persistent login state across browser sessions
+
+### Internationalization
+
+- Support for English and Spanish
+- Browser language detection
+- Persistent language preference
+- Easy language switching via UI toggle
+
+### Data Management
+
+- Custom \`useFetchData\` hook for consistent data fetching patterns
+- Loading and error states for all data operations
+- Mock API with realistic delays for demonstration
+- React Context for global state management
+
+### UI/UX
+
+- Modern, professional design with complementary blue-orange color scheme
+- Responsive layout optimized for mobile and desktop
+- Smooth animations and hover effects
+- Accessible design with proper contrast ratios
+
+## Available Scripts
+
+- \`npm run dev\` - Start development server
+- \`npm run build\` - Build for production
+- \`npm run preview\` - Preview production build
+- \`npm run lint\` - Run ESLint
+
+## Routes
+
+- **/** - Landing page with portfolio overview
+- **/login** - Authentication page
+- **/dashboard** - User dashboard with about me and featured projects
+- **/admin** - Admin panel (requires admin role)
+
+## Customization
+
+### Adding New Projects
+
+Edit \`src/api/mockData.ts\` to add or modify project data:
+
+\`\`\`typescript
+export const mockProjects: Project[] = [
+  {
+    id: 'unique-id',
+    title: 'Project Title',
+    description: 'Project description',
+    technologies: ['React', 'TypeScript'],
+    githubUrl: 'https://github.com/...',
+    liveUrl: 'https://...',
+    featured: true,
+  },
+  // ... more projects
+];
+\`\`\`
+
+### Updating About Me
+
+Modify the \`mockAboutMe\` object in \`src/api/mockData.ts\`:
+
+\`\`\`typescript
+export const mockAboutMe: AboutMe = {
+  name: 'Your Name',
+  title: 'Your Title',
+  bio: 'Your biography...',
+  skills: ['Skill1', 'Skill2'],
+  // ... other fields
+};
+\`\`\`
+
+### Adding Translations
+
+Add new translation keys to \`src/i18n.ts\`:
+
+\`\`\`typescript
+const resources = {
+  en: {
+    translation: {
+      newSection: {
+        newKey: 'English text',
+      },
+    },
+  },
+  es: {
+    translation: {
+      newSection: {
+        newKey: 'Spanish text',
+      },
+    },
+  },
+};
+\`\`\`
+
+### Theme Customization
+
+Modify CSS variables in \`src/index.css\` to customize the color scheme:
+
+\`\`\`css
+:root {
+  --primary: oklch(0.45 0.15 250); /* Primary blue */
+  --accent: oklch(0.65 0.15 50);   /* Accent orange */
+  /* ... other color variables */
+}
+\`\`\`
+
+## Future Enhancements
+
+This portfolio is designed for extensibility. Planned enhancements include:
+
+- **Real API Integration** - Replace mock data with actual backend API
+- **Content Management** - Admin interface for editing projects and about me
+- **Dark Mode** - Theme switching capability
+- **SEO Optimization** - Meta tags and structured data
+- **Analytics** - Integration with Google Analytics or similar
+- **Contact Form** - Email integration for visitor inquiries
+- **Blog Section** - Content management for blog posts
+- **Image Upload** - File management for project images
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch: \`git checkout -b feature-name\`
+3. Commit changes: \`git commit -am 'Add feature'\`
+4. Push to branch: \`git push origin feature-name\`
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
