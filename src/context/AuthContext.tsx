@@ -31,7 +31,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Set up token expiry monitoring
     const interval = setInterval(() => {
       if (!authUtils.isAuthenticated()) {
-        setUser(prevUser => prevUser ? null : prevUser);
+        setUser(null);
       }
     }, 60000); // Check every minute
 
