@@ -9,7 +9,7 @@ import { Alert, AlertDescription } from '../components/ui/alert';
 import { useFetchData } from '../hooks/useFetchData';
 import { useProject } from '../context/ProjectContext';
 import { api } from '../api/mockData';
-import { Briefcase, User } from '@phosphor-icons/react';
+import { Briefcase, User } from 'lucide-react';
 
 export function DashboardPage() {
   const { t } = useTranslation();

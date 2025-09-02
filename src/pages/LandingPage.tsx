@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Layout } from '../components/layout/Layout';
-import { User, Briefcase, SignIn } from '@phosphor-icons/react';
+// Switched from @phosphor-icons/react to lucide-react due to proxy export issue
+import { User, Briefcase, LogIn as SignIn } from 'lucide-react';
 
 export function LandingPage() {
   const { t } = useTranslation();

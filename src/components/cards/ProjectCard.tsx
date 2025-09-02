@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import type { Project } from '../../model/types';
-import { GithubLogo, Globe } from '@phosphor-icons/react';
+import { Github, Globe } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
@@ -15,7 +15,18 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
   const { t } = useTranslation();
 
   return (
-    <Card className="hover:shadow-lg transition-all duration-300 group cursor-pointer">
+    <Card
+      className="hover:shadow-lg transition-all duration-300 group cursor-pointer"
+      onClick={() => onSelect?.(project)}
+      role={onSelect ? 'button' : undefined}
+      tabIndex={onSelect ? 0 : undefined}
+      onKeyDown={(e) => {
+        if (onSelect && (e.key === 'Enter' || e.key === ' ')) {
+          e.preventDefault();
+            onSelect(project);
+        }
+      }}
+    >
       <CardHeader>
         <div className="flex items-start justify-between">
           <CardTitle className="text-lg group-hover:text-primary transition-colors">
@@ -51,7 +62,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
               className="flex items-center gap-2"
             >
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                <GithubLogo size={16} />
+                <Github size={16} />
                 {t('projects.viewCode')}
               </a>
             </Button>
