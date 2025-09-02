@@ -204,6 +204,27 @@ This portfolio is designed for extensibility. Planned enhancements include:
 - **Blog Section** - Content management for blog posts
 - **Image Upload** - File management for project images
 
+## Migration Notes
+
+### 2025-09: Lottie Removal & Three.js Hero Animation
+
+The landing page hero animation transitioned from a planned `lottie-react` JSON animation to a lightweight custom Three.js component (`LandingAnimation3D`). Reasons:
+
+- Avoid extra ~80kb (lottie + json) for a simple motion effect
+- Gain dynamic lighting & theme-friendly gradient
+- Provide graceful fallback when WebGL unsupported
+
+Component characteristics:
+
+- Accessible (`role="img"`, customizable `aria-label`)
+- Cleans up WebGL context, geometry, materials on unmount
+- No external abstraction (keeps bundle minimal vs react-three-fiber)
+- <150 LOC, self-contained under `src/components/elements/`
+
+Testing: Added Vitest + React Testing Library. A basic test asserts the role & aria-label are present.
+
+If you need to re-enable Lottie later, re-install `lottie-react` and add a JSON animation loader component in `components/elements`.
+
 ## Contributing
 
 1. Fork the repository
