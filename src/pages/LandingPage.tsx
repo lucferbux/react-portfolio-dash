@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
@@ -6,18 +6,11 @@ import { Card, CardContent } from '../components/ui/card';
 import { Layout } from '../components/layout/Layout';
 // Switched from @phosphor-icons/react to lucide-react due to proxy export issue
 import { User, Briefcase, LogIn as SignIn } from 'lucide-react';
+import { LandingAnimation3D } from '../components/elements/LandingAnimation3D';
 
 export function LandingPage() {
   const { t } = useTranslation();
-  const animationRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Simple CSS animation as placeholder for Lottie
-    const element = animationRef.current;
-    if (element) {
-      element.style.animation = 'float 3s ease-in-out infinite';
-    }
-  }, []);
+  // 3D animation handled by LandingAnimation3D
 
   return (
     <Layout>
@@ -25,13 +18,8 @@ export function LandingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-8">
             {/* Hero Animation */}
-            <div
-              ref={animationRef}
-              className="mx-auto w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center mb-8"
-            >
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                <User size={32} className="text-white" />
-              </div>
+            <div className="mb-8">
+              <LandingAnimation3D size={240} padding={20} label={t('landing.title') || 'Landing animation'} />
             </div>
 
             {/* Hero Content */}
@@ -112,12 +100,6 @@ export function LandingPage() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-20px); }
-        }
-      `}</style>
     </Layout>
   );
 }
