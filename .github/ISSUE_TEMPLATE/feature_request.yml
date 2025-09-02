@@ -1,0 +1,46 @@
+name: "✨ Feature Request"
+description: Suggest a new capability or improvement
+title: "feat: <short description>"
+labels: [enhancement]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: Summary
+      placeholder: e.g. Add dark mode toggle in navigation
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / Motivation
+      description: What user pain or gap does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed Solution
+      description: Describe desired behavior, UI, data changes.
+      placeholder: Outline components, state, API changes.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Other approaches you evaluated.
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact & Risks
+      description: Performance, security, UX, migration considerations.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope Clarification
+      options:
+        - label: No breaking API changes
+        - label: No new external dependency required
+        - label: Translations needed
+        - label: Requires design review

@@ -1,0 +1,56 @@
+name: "📖 User Story"
+description: A user-centered slice of value
+title: "story: <role> can <action>"
+labels: [story]
+body:
+  - type: textarea
+    id: as_a
+    attributes:
+      label: Role
+      placeholder: As an authenticated user
+    validations:
+      required: true
+  - type: textarea
+    id: i_want
+    attributes:
+      label: Need
+      placeholder: I want to update my profile settings
+    validations:
+      required: true
+  - type: textarea
+    id: so_that
+    attributes:
+      label: Value
+      placeholder: So that I can keep my information current
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      description: Independent, testable conditions (Given / When / Then or checklist).
+      placeholder: |
+        - [ ] Given ..., when ..., then ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 (critical)
+        - P1 (high)
+        - P2 (normal)
+        - P3 (low)
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / Design References
+  - type: textarea
+    id: tech_notes
+    attributes:
+      label: Technical Notes
+      description: Data model, API, performance concerns.

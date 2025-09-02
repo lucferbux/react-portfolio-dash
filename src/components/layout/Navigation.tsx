@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../context/AuthContext';
 import { Button } from '../ui/button';
 import { LanguageSelector } from '../elements/LanguageSelector';
-import { House, User, Briefcase, SignOut, SignIn } from '@phosphor-icons/react';
+// Replaced phosphor icons with lucide-react equivalents
+import { Home as House, User, Briefcase, LogOut as SignOut, LogIn as SignIn } from 'lucide-react';
 
 export function Navigation() {
   const { t } = useTranslation();

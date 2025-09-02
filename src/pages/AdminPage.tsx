@@ -4,7 +4,7 @@ import { Layout } from '../components/layout/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { useAuth } from '../context/AuthContext';
-import { Briefcase, Gear, Users, ChartBar } from '@phosphor-icons/react';
+import { Briefcase, Cog as Gear, Users, BarChart as ChartBar } from 'lucide-react';
 
 export function AdminPage() {
   const { t } = useTranslation();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/button';
-import { Globe } from '@phosphor-icons/react';
+import { Globe } from 'lucide-react';
 
 export function LanguageSelector() {
   const { i18n } = useTranslation();

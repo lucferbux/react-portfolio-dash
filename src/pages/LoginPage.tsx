@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Alert, AlertDescription } from '../components/ui/alert';
 import { Layout } from '../components/layout/Layout';
 import { LoadingSpinner } from '../components/elements/LoadingSpinner';
-import { SignIn } from '@phosphor-icons/react';
+import { LogIn as SignIn } from 'lucide-react';
 
 export function LoginPage() {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ export function LoginPage() {
     try {
       await login(formData.username, formData.password);
       navigate(from, { replace: true });
-    } catch (error) {
+  } catch {
       setError(t('auth.error'));
     }
   };

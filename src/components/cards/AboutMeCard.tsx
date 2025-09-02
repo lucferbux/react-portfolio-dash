@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import { User, Briefcase, MapPin, Envelope } from '@phosphor-icons/react';
+import { User, Briefcase, MapPin, Mail as Envelope } from 'lucide-react';
 import type { AboutMe } from '../../model/types';
 
 interface AboutMeCardProps {

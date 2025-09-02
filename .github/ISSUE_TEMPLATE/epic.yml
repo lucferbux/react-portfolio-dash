@@ -1,0 +1,58 @@
+name: "🗺️ Epic"
+description: Large body of work composed of multiple stories
+title: "epic: <initiative name>"
+labels: [epic]
+body:
+  - type: input
+    id: goal
+    attributes:
+      label: Epic Goal
+      placeholder: e.g. Implement authenticated admin management area
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: High-level overview, success definition.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: In Scope
+      placeholder: List key deliverables.
+  - type: textarea
+    id: out_scope
+    attributes:
+      label: Out of Scope
+      placeholder: Clarify exclusions.
+  - type: textarea
+    id: stories
+    attributes:
+      label: Linked Stories / Issues
+      description: Use checklist referencing other issues.
+      placeholder: |
+        - [ ] #123 User can ...
+        - [ ] #124 Admin can ...
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / Constraints
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Success Metrics
+      placeholder: e.g. <metric> from X to Y by date.
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Target Timeline / Milestones
+  - type: checkboxes
+    id: readiness
+    attributes:
+      label: Readiness
+      options:
+        - label: Alignment with product goals confirmed
+        - label: Dependencies identified
+        - label: Acceptance metrics defined
