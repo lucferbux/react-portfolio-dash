@@ -3,7 +3,7 @@ import type { AboutMe, Project } from '../model/types';
 // Mock data for demo purposes
 export const mockAboutMe: AboutMe = {
   name: 'Alex Johnson',
-  title: 'Full-Stack Developer & UI/UX Designer',
+  title: 'Full-Stack Developer',
   bio: 'Passionate developer with 5+ years of experience creating beautiful, functional web applications. I specialize in React, TypeScript, and modern web technologies. Always learning and exploring new ways to solve complex problems.',
   skills: [
     'React',

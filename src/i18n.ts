@@ -23,7 +23,7 @@ const resources = {
       },
       landing: {
         title: 'Welcome to My Portfolio',
-        subtitle: 'Full-Stack Developer & UI/UX Designer',
+        subtitle: 'Full-Stack Developer',
         aboutButton: 'About Me',
         projectsButton: 'View Projects',
         loginButton: 'Login',
